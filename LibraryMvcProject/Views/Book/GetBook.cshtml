@@ -1,0 +1,32 @@
+﻿@model LibraryMvcProject.Models.TBLBOOK
+@{
+    ViewBag.Title = "GetBook";
+    Layout = "~/Views/Shared/_BookLayout.cshtml";
+}
+
+<h2>GetBook</h2>
+
+@using(Html.BeginForm("UpdateBook","Book",FormMethod.Post)) 
+{
+    <form class="form-group" method="post">
+        <div style="margin-bottom:15px">
+            @Html.HiddenFor(y => y.BOOKID)
+            @Html.LabelFor(x => x.NAME)
+            @Html.TextAreaFor(x => x.NAME, new { @class = "form-control" })
+        </div>
+        <div style="margin-bottom:15px">
+            @Html.LabelFor(x => x.AUTHOR)
+            @Html.TextAreaFor(x => x.AUTHOR, new { @class = "form-control" })
+        </div>
+        <div style="margin-bottom:15px">
+            @Html.LabelFor(x => x.PAGE)
+            @Html.TextAreaFor(x => x.PAGE, new { @class = "form-control" })
+        </div>
+        <div style="margin-bottom:15px">
+            @Html.LabelFor(x => x.CATEGORY)
+            @Html.TextAreaFor(x => x.CATEGORY, new { @class = "form-control" })
+        </div>
+        <button class="btn btn-success">Update</button>
+    </form>
+}
+

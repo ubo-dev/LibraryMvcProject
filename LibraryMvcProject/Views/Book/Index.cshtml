@@ -1,0 +1,35 @@
+﻿@using LibraryMvcProject.Models;
+@model List<TBLBOOK>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_BookLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Book Name</th>
+        <th>Author</th>
+        <th>Page</th>
+        <th>Category</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+    @foreach(var x in Model)
+            {
+                <tr>
+                    <td>@x.BOOKID</td>
+                    <td>@x.NAME</td>
+                    <td>@x.AUTHOR</td>
+                    <td>@x.PAGE</td>
+                    <td>@x.TBLCATEGORY.CATEGORYNAME</td>s
+                    <td><a href="/Book/DeleteBook/@x.BOOKID" class="btn btn-danger">Delete</a></td>
+                    <td><a href="/Book/GetBook/@x.BOOKID" class="btn btn-warning">Update</a></td>
+                </tr>
+
+            }
+</table>
+
+<a href="/Book/AddBook" class="btn btn-primary">New Book</a>

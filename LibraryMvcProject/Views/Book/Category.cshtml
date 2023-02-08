@@ -1,0 +1,24 @@
+﻿@using LibraryMvcProject.Models;
+@model List<TBLCATEGORY>
+@{
+    ViewBag.Title = "Category";
+    Layout = "~/Views/Shared/_BookLayout.cshtml";
+}
+
+<h2>Category</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Category</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.ID</td>
+            <td>@x.CATEGORYNAME</td>
+        </tr>
+
+    }
+</table>
+
